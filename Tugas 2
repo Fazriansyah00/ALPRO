@@ -1,0 +1,24 @@
+import random
+
+with open("random.txt", "w") as file:
+    for _ in range(100):
+        angka = random.randint(1, 399)
+        file.write(str(angka) + " ")
+        print("Angka acak: ", angka)
+
+
+print("================================================================================")
+
+genap = 0
+ganjil = 0
+
+with open("random.txt", "r") as file:
+    for line in file:
+        angka = int(line.strip())
+        if angka % 2 == 0:
+            ganjil += 1
+        else:
+            genap += 1
+
+
+file.close()
